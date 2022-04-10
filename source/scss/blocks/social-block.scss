@@ -6,6 +6,12 @@
       opacity: 1;
       pointer-events: auto;
     }
+		.social-block__link {
+			opacity: 1;
+			transition-property: opacity;
+			transition-duration: 0.4s;
+			transition-timing-function: ease;
+		}
   }
 }
 
@@ -171,6 +177,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+	opacity: 0;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -211,6 +218,7 @@
 
   &--fb {
     svg {
+			transition: 0.3s;
       width: 0.8rem;
       height: 1.7rem;
 
@@ -222,7 +230,9 @@
   }
 
   &--insta {
+		transition-delay: 0.1s;
     svg {
+			transition: 0.3s;
       width: 1.5rem;
       height: 1.5rem;
 
@@ -234,7 +244,9 @@
   }
 
   &--vk {
+		transition-delay: 0.2s;
     svg {
+			transition: 0.3s;
       width: 1.7rem;
       height: 1rem;
 
