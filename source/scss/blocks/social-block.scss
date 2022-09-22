@@ -2,6 +2,8 @@
   position: relative;
 
   &:hover {
+    color: $c-purple;
+
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
@@ -12,6 +14,15 @@
 			transition-duration: 0.4s;
 			transition-timing-function: ease;
 		}
+    .social-block__toggler {
+      color: $c-purple;
+    }
+  }
+
+  &:focus {
+    .social-block__toggler {
+      color: $c-purple;
+    }
   }
 }
 
@@ -42,7 +53,7 @@
     border-radius: 50%;
     background-color: $c-light;
     border: 2px solid $c-light;
-    z-index: -1;
+    // z-index: -1;
 		transition: 0.4s ease;
   }
 
@@ -53,14 +64,18 @@
     height: 2.2rem;
   }
 
-  &:hover,
   .social-block--active & {
-    color: $c-purple;
+    color: $c-light;
+    background-color: $c-purple;
 
     &::before {
       width: 112.5%;
       height: 112.5%;
     }
+  }
+
+  .social-block--active &::before {
+    background-color: $c-light;
   }
 
   &:focus {
