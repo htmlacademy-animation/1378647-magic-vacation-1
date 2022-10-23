@@ -58,6 +58,11 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.2;
+  animation-name: slide-bottom;
+	animation-duration: 0.7s;
+	animation-timing-function: ease;
+	animation-delay: 0.2s;
+	animation-fill-mode: backwards;
 
   @media (min-width: $stop-scaling) {
     margin-left: 58px;

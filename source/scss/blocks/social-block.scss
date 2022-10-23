@@ -2,9 +2,26 @@
   position: relative;
 
   &:hover {
+    color: $c-purple;
+
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+    }
+		.social-block__link {
+			opacity: 1;
+			transition-property: opacity;
+			transition-duration: 0.4s;
+			transition-timing-function: ease;
+		}
+    .social-block__toggler {
+      color: $c-purple;
+    }
+  }
+
+  &:focus {
+    .social-block__toggler {
+      color: $c-purple;
     }
   }
 }
@@ -17,6 +34,8 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+	transition: color 0.4s ease;
+	background-color: $c-light;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -34,7 +53,8 @@
     border-radius: 50%;
     background-color: $c-light;
     border: 2px solid $c-light;
-    z-index: -1;
+    // z-index: -1;
+		transition: 0.4s ease;
   }
 
   svg {
@@ -44,14 +64,18 @@
     height: 2.2rem;
   }
 
-  &:hover,
   .social-block--active & {
-    color: $c-purple;
+    color: $c-light;
+    background-color: $c-purple;
 
     &::before {
       width: 112.5%;
       height: 112.5%;
     }
+  }
+
+  .social-block--active &::before {
+    background-color: $c-light;
   }
 
   &:focus {
@@ -168,6 +192,7 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+	opacity: 0;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -208,6 +233,7 @@
 
   &--fb {
     svg {
+			transition: 0.3s;
       width: 0.8rem;
       height: 1.7rem;
 
@@ -219,7 +245,9 @@
   }
 
   &--insta {
+		transition-delay: 0.1s;
     svg {
+			transition: 0.3s;
       width: 1.5rem;
       height: 1.5rem;
 
@@ -231,7 +259,9 @@
   }
 
   &--vk {
+		transition-delay: 0.2s;
     svg {
+			transition: 0.3s;
       width: 1.7rem;
       height: 1rem;
 
