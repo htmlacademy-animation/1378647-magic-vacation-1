@@ -29,10 +29,13 @@ export default class FullPageScroll {
         this.changePageDisplay();
       }
     }
+
     this.scrollFlag = false;
+
     if (this.timeout !== null) {
       clearTimeout(this.timeout);
     }
+
     this.timeout = setTimeout(() => {
       this.timeout = null;
       this.scrollFlag = true;
@@ -56,7 +59,9 @@ export default class FullPageScroll {
       screen.classList.add(`screen--hidden`);
       screen.classList.remove(`active`);
     });
+
     this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
@@ -64,6 +69,7 @@ export default class FullPageScroll {
 
   changeActiveMenuItem() {
     const activeItem = Array.from(this.menuElements).find((item) => item.dataset.href === this.screenElements[this.activeScreen].id);
+
     if (activeItem) {
       this.menuElements.forEach((item) => item.classList.remove(`active`));
       activeItem.classList.add(`active`);
