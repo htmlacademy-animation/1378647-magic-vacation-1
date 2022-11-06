@@ -9,7 +9,10 @@ export default class FullPageScroll {
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
 
+    this.overlay = document.querySelector(`.overlay-screen`);
+
     this.activeScreen = 0;
+    this.previousScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
     this.onUrlHashChengedHandler = this.onUrlHashChanged.bind(this);
   }
@@ -44,6 +47,7 @@ export default class FullPageScroll {
 
   onUrlHashChanged() {
     const newIndex = Array.from(this.screenElements).findIndex((screen) => location.hash.slice(1) === screen.id);
+    this.previousScreen = this.activeScreen;
     this.activeScreen = (newIndex < 0) ? 0 : newIndex;
     this.changePageDisplay();
   }
@@ -55,16 +59,34 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
-    });
+    let delay = 0;
 
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    if (this.previousScreen === 1) {
+      delay = 1e3;
+      this.screenElements[this.previousScreen].style.zIndex = 0;
+
+      this.overlay.classList.add(`show`);
+
+      setTimeout(() => {
+        // this.overlay.classList.add(`hide`);
+        this.overlay.classList.remove(`show`);
+      }, delay);
+    }
+
+    setTimeout(() => {
+      this.screenElements.forEach((screen) => {
+        screen.classList.remove(`active`);
+        screen.classList.add(`screen--hidden`);
+      });
+
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    }, delay);
+
 
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 100);
+      this.screenElements[this.previousScreen].style.zIndex = ``;
+    }, delay + 100);
   }
 
   changeActiveMenuItem() {

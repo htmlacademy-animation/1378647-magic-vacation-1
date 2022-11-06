@@ -2,12 +2,12 @@
   position: absolute;
   inset: 0;
   background-color: $c-dark;
-  transform: scaleY(0);
   transform-origin: bottom;
-  transition: transform .5s ease;
+  transition: transform 1s ease;
   z-index: 1;
-
-  &.overlay-screen--show {
+  transform: scaleY(0);
+  
+  &.show {
     transform: scaleY(1);
   }
 }
