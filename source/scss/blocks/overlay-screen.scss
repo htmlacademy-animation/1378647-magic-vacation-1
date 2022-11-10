@@ -1,0 +1,13 @@
+.overlay-screen {
+  position: absolute;
+  inset: 0;
+  background-color: $c-dark;
+  transform-origin: bottom;
+  transition: transform 1s ease;
+  z-index: 1;
+  transform: scaleY(0);
+  
+  &.show {
+    transform: scaleY(1);
+  }
+}
