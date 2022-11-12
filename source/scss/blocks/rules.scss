@@ -214,10 +214,15 @@
     &:nth-child(#{$i})::after { 
       animation-delay: calc(300ms * #{$i});
     }
+
+    &:nth-child(#{$i}) p {
+      animation-delay: calc(200ms + 300ms * #{$i});
+    }
   }
 
   p {
     margin: 0;
+    animation: rules-text-appear 0.75s ease both;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
@@ -240,6 +245,17 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes rules-text-appear {
+  from {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -266,5 +282,40 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     bottom: 2rem;
     right: 1.5rem;
+  }
+
+  &::before {
+    left: auto;
+    transform: translateY(-50%);
+    right: 0;
+    width: 35%;
+    animation: button-widening 0.8s ease 1.2s both;
+  }
+
+  @keyframes button-widening {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+      width: 35%;
+    }
+    100% {
+      opacity: 1;
+      width: 100%;
+    }
+  }
+
+  & span {
+    animation: button-text-opacity 0.8s ease 1.5s both;
+  }
+
+  @keyframes button-text-opacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
