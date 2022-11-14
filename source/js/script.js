@@ -9,6 +9,7 @@ import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
 import pageLoadAnimation from './modules/pageLoadAnimation';
+import showLettersAnimation from './modules/showLettersAnimation';
 
 // init modules
 pageLoadAnimation();
@@ -20,6 +21,7 @@ chat();
 result();
 form();
 social();
+showLettersAnimation();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
