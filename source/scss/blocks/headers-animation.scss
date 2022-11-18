@@ -3,7 +3,7 @@
 
   .animated-letter {
     display: inline-block;
-    animation: appear-letters 0.5s ease both;
+    animation: appear-letters 0.5s cubic-bezier(.22,.48,.35,1) both;
   }
 }
 

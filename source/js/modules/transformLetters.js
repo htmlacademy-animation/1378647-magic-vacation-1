@@ -1,4 +1,4 @@
-export default (htmlElement, animationProperties) => {
+export default (htmlElement, animationProperties = {}) => {
   let text = htmlElement.textContent;
   let words = text.split(` `);
 
@@ -10,9 +10,19 @@ export default (htmlElement, animationProperties) => {
 
   htmlElement.innerHTML = text;
 
-  const lettersElements = Array.from(htmlElement.querySelectorAll(`.animated-letter`));
+  const duration = 0.5;
+  const stringElements = Array.from(htmlElement.querySelectorAll(`.animated-string`));
 
-  lettersElements.forEach((element) => {
-    element.style.animationDelay = (0.5 * Math.random()) + 's';
-  });
+  if (animationProperties.delayTime) {
+    for (let j = 0; j < stringElements.length; j++) {
+      const lettersElements = Array.from(stringElements[j].querySelectorAll(`.animated-letter`));
+
+      for (let i = 0; i < lettersElements.length; i++) {
+        const delay = animationProperties.delayTime[j][i];
+        const element = lettersElements[i];
+
+        element.style.animationDelay = (delay * 0.1) + (j * duration) + `s`;
+      }
+    }
+  }
 };
