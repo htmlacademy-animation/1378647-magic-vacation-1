@@ -5,6 +5,11 @@ export default () => {
     delayTime: [[2, 1, 0, 1, 2, 1, 0, 3, 1, 0, 1, 0], [1, 2, 1, 0, 1, 0]]
   });
 
+  transformLetters(document.querySelector(`.intro__date`), {
+    delayTime: [[1, 0, 1, 1, 0, 0, 0, 2, 1, 0, 2, 1, 0]],
+    totalDelay: 1000
+  });
+
   document.body.addEventListener(`screenChanged`, (e) => {
     const {screenElement, screenName} = e.detail;
     const headerAnimated = screenElement.querySelector(`.${screenName}__title`) || screenElement.querySelector(`.slider__item-title`);

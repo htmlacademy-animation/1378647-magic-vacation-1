@@ -1,17 +1,20 @@
 export default (htmlElement, animationProperties = {}) => {
-  let text = htmlElement.textContent;
-  let words = text.split(` `);
+  let text = htmlElement.innerHTML;
+  text = text.replace(/\s/g, ``);
+  let strings = text.split(`<br>`);
 
-  words = words.map((word) => Array.from(word)
+  strings = strings.map((str) => Array.from(str)
     .map((letter) => `<span class="animated-letter">${letter}</span>`).join(``))
-    .map((word) => `<span class="animated-string">${word}</span>`);
+    .map((str) => `<span class="animated-string">${str}</span>`);
 
-  text = words.join(``);
+  text = strings.join(``);
 
   htmlElement.innerHTML = text;
 
-  const duration = 0.5;
+  const duration = 500;
   const stringElements = Array.from(htmlElement.querySelectorAll(`.animated-string`));
+
+  let totalDelay = animationProperties.totalDelay ? animationProperties.totalDelay : 0;
 
   if (animationProperties.delayTime) {
     for (let j = 0; j < stringElements.length; j++) {
@@ -21,7 +24,7 @@ export default (htmlElement, animationProperties = {}) => {
         const delay = animationProperties.delayTime[j][i];
         const element = lettersElements[i];
 
-        element.style.animationDelay = (delay * 0.1) + (j * duration) + `s`;
+        element.style.animationDelay = (delay * 100) + (j * duration) + totalDelay + `ms`;
       }
     }
   }
