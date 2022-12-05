@@ -114,28 +114,37 @@
 
     #result2.screen--show & {
       &.leaf1 {
-        animation: result-opacity 0.5s ease both, leaf1-move 1.7s ease-in-out both;
+        animation: result-opacity 0.7s ease both, leaf1-move 1.7s ease-in-out both;
       }
   
       &.leaf2 {
-        animation: result-opacity 0.5s ease both, leaf2-move 1.7s ease-in-out both;
+        animation: result-opacity 0.7s ease both, leaf2-move 1.7s ease-in-out both;
   
       }
   
       &.leaf-green {
-        animation: result-opacity 0.5s ease both, leafGreen-move 1.7s ease-in-out both;
+        animation: result-opacity 0.7s ease both, leafGreen-move 1.7s ease-in-out both;
       }
   
       &.suitcase {
-        animation: suitcase-move 1s ease;
+        animation: suitcase-move 0.75s cubic-bezier(0.25, 0.1, 0.74, 1.38);
       }
   
       &.flamingo {
-        animation: result-opacity 0.5s ease both;
+        animation: result-opacity 0.7s ease both, flamingo-move-infinite 1.5s ease-in-out infinite alternate;
       }
     }
   }
 
+}
+
+@keyframes flamingo-move-infinite {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
 }
 
 @keyframes suitcase-move {
