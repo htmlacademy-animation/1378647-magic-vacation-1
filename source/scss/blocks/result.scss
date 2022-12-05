@@ -77,7 +77,6 @@
       background-image: url("../../img/result-2/leaf_blue_1.png");
       transform: rotate(-14deg);
       transform-origin: -20% 84%;
-      animation: result-opacity 0.5s ease both, leaf1-move 1.7s ease both;
     }
 
     &.leaf2 {
@@ -87,8 +86,6 @@
       height: 43%;
       background-image: url("../../img/result-2/leaf_blue_2.png");
       transform-origin: 100% 50%;
-      animation: result-opacity 0.5s ease both, leaf2-move 1.7s ease both;
-
     }
 
     &.leaf-green {
@@ -97,8 +94,6 @@
       width: 55%;
       height: 26%;
       background-image: url("../../img/result-2/leaf_green.png");
-      animation: result-opacity 0.5s ease both;
-
     }
 
     &.suitcase {
@@ -115,8 +110,40 @@
       width: 43%;
       height: 44%;
       background-image: url("../../img/result-2/flamingo.png");
-      animation: result-opacity 0.5s ease both;
     }
+
+    #result2.screen--show & {
+      &.leaf1 {
+        animation: result-opacity 0.5s ease both, leaf1-move 1.7s ease-in-out both;
+      }
+  
+      &.leaf2 {
+        animation: result-opacity 0.5s ease both, leaf2-move 1.7s ease-in-out both;
+  
+      }
+  
+      &.leaf-green {
+        animation: result-opacity 0.5s ease both, leafGreen-move 1.7s ease-in-out both;
+      }
+  
+      &.suitcase {
+        animation: suitcase-move 1s ease;
+      }
+  
+      &.flamingo {
+        animation: result-opacity 0.5s ease both;
+      }
+    }
+  }
+
+}
+
+@keyframes suitcase-move {
+  from {
+    transform: translate(0px, 200px) scale(0);
+  }
+  to {
+    transform: translate(0, 0) scale(1);
   }
 }
 
@@ -154,6 +181,30 @@
 }
 
 @keyframes leaf2-move {
+  0% {
+    transform: rotate(41deg);
+  }
+  30% {
+    transform: rotate(-9deg);
+  }
+  50% {
+    transform: rotate(calc(41deg * 0.1));
+  }
+  65% {
+    transform: rotate(calc(-9deg * 0.4));
+  }
+  80% {
+    transform: rotate(calc(41deg * 0.05));
+  }
+  90% {
+    transform: rotate(calc(-9deg * 0.1));
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes leafGreen-move {
   0% {
     transform: rotate(41deg);
   }
