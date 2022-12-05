@@ -14,7 +14,7 @@ export default () => {
     const {screenElement, screenName} = e.detail;
     const headerAnimated = screenElement.querySelector(`.${screenName}__title`) || screenElement.querySelector(`.slider__item-title`);
 
-    if (headerAnimated) {
+    if (headerAnimated && !headerAnimated.querySelector(`.animated-string`)) {
       let delayTime = [];
 
       switch (screenName) {

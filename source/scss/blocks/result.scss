@@ -52,6 +52,129 @@
     object-fit: cover;
     object-position: center;
   }
+
+  .result__image-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 80vmin;
+    height: 80vmin;
+    margin: auto;
+  }
+
+  .result__image-part {
+    display: block;
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &.leaf1 {
+      right: 4%;
+      top: 35%;
+      width: 46%;
+      height: 43%;
+      background-image: url("../../img/result-2/leaf_blue_1.png");
+      transform: rotate(-14deg);
+      transform-origin: -20% 84%;
+      animation: result-opacity 0.5s ease both, leaf1-move 1.7s ease both;
+    }
+
+    &.leaf2 {
+      left: -7%;
+      top: 50%;
+      width: 46%;
+      height: 43%;
+      background-image: url("../../img/result-2/leaf_blue_2.png");
+      transform-origin: 100% 50%;
+      animation: result-opacity 0.5s ease both, leaf2-move 1.7s ease both;
+
+    }
+
+    &.leaf-green {
+      right: 1%;
+      top: 57%;
+      width: 55%;
+      height: 26%;
+      background-image: url("../../img/result-2/leaf_green.png");
+      animation: result-opacity 0.5s ease both;
+
+    }
+
+    &.suitcase {
+      left: 16%;
+      top: 35%;
+      width: 57%;
+      height: 57%;
+      background-image: url("../../img/result-2/suitcase.png");
+    }
+
+    &.flamingo {
+      left: 10.5%;
+      top: 47.5%;
+      width: 43%;
+      height: 44%;
+      background-image: url("../../img/result-2/flamingo.png");
+      animation: result-opacity 0.5s ease both;
+    }
+  }
+}
+
+@keyframes result-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes leaf1-move {
+  0% {
+    transform: rotate(-14deg);
+  }
+  30% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(calc(-14deg * 0.2));
+  }
+  65% {
+    transform: rotate(calc(9deg * 0.4));
+  }
+  80% {
+    transform: rotate(calc(-14deg * 0.1));
+  }
+  90% {
+    transform: rotate(calc(9deg * 0.1));
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes leaf2-move {
+  0% {
+    transform: rotate(41deg);
+  }
+  30% {
+    transform: rotate(-9deg);
+  }
+  50% {
+    transform: rotate(calc(41deg * 0.1));
+  }
+  65% {
+    transform: rotate(calc(-9deg * 0.4));
+  }
+  80% {
+    transform: rotate(calc(41deg * 0.05));
+  }
+  90% {
+    transform: rotate(calc(-9deg * 0.1));
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 .result__title {
