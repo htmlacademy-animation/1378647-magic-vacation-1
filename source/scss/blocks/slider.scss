@@ -248,6 +248,28 @@
   }
 }
 
+.slider__control--prev {
+	animation: slide-left 0.5s ease;
+}
+
+.slider__control--next {
+	animation: slide-right 0.5s ease;
+}
+
+@keyframes slide-left {
+	from {
+		opacity: 0;
+		transform: translateX(-60px);
+	}
+}
+
+@keyframes slide-right {
+	from {
+		opacity: 0;
+		transform: translateX(60px);
+	}
+}
+
 .slider__pagination.swiper-pagination {
   position: absolute;
   bottom: 2.8rem;
