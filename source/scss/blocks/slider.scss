@@ -250,10 +250,18 @@
 
 .slider__control--prev {
 	animation: slide-left 0.5s ease;
+
+	svg {
+		animation: rotate-cw 0.5s ease both;
+	}
 }
 
 .slider__control--next {
 	animation: slide-right 0.5s ease;
+
+	svg {
+		animation: rotate-ccw 0.5s ease both;
+	}
 }
 
 @keyframes slide-left {
@@ -270,6 +278,18 @@
 	}
 }
 
+@keyframes rotate-cw {
+	from {
+		transform: rotate(-180deg);
+	}
+}
+
+@keyframes rotate-ccw {
+	from {
+		transform: rotate(180deg);
+	}
+}
+
 .slider__pagination.swiper-pagination {
   position: absolute;
   bottom: 2.8rem;
@@ -282,6 +302,7 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+	animation: opacity-appear 0.7s ease both;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;

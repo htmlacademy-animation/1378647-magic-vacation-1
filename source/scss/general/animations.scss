@@ -28,3 +28,9 @@
 		width: calc(100% - 21rem);
 	}
 }
+
+@keyframes opacity-appear {
+	from {
+		opacity: 0;
+	}
+}
