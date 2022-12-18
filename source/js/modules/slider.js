@@ -79,4 +79,28 @@ export default () => {
   });
 
   setSlider();
+
+  storySlider.on(`slideChange`, updateSliderClass);
+
+  document.body.addEventListener(`screenChanged`, (e) => {
+    if (e.detail.screenId == 1) {
+      updateSliderClass();
+    } else {
+      removeSliderClass();
+    }
+  });
+
+  function updateSliderClass() {
+    const {activeIndex} = storySlider;
+
+    removeSliderClass();
+    document.body.classList.add(`swiper-slide-${activeIndex}`);
+  }
+
+  function removeSliderClass() {
+    const bodyClassList = document.body.classList.value;
+    const regex = /swiper-slide-\d/g;
+
+    document.body.classList.remove(bodyClassList.match(regex));
+  }
 };

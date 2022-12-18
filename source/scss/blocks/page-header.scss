@@ -307,6 +307,22 @@
 				transform-origin: left center;
       }
     }
+
+		.swiper-slide-2 &:hover, .swiper-slide-3 &:hover {
+			color: $blue-light;
+
+			&::after {
+				background-color: $blue-light;
+			}
+		}
+	
+		.swiper-slide-4 &:hover, .swiper-slide-5 &:hover {
+			color: $blue-dark;
+
+			&::after {
+				background-color: $blue-dark;
+			}
+		}
   }
 }
 

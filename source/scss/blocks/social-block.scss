@@ -42,6 +42,14 @@
     transform: scale(1);
   }
 
+	.swiper-slide-2 &, .swiper-slide-3 & {
+		color: $blue-dark;
+	}
+	
+	.swiper-slide-4 &, .swiper-slide-5 & {
+		color: $blue-light;
+	}
+
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
   }
@@ -91,10 +99,10 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    // & + .social-block__list {
+    //   opacity: 1;
+    //   pointer-events: auto;
+    // }
   }
 
   &:active,
