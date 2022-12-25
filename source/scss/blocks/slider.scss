@@ -182,6 +182,19 @@
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+	transition: color 0.4s ease;
+
+	.swiper-slide-0 &, .swiper-slide-1 & {
+		color: $c-purple;
+	}
+
+	.swiper-slide-2 &, .swiper-slide-3 & {
+		color: $blue-dark;
+	}
+	+
+	.swiper-slide-4 &, .swiper-slide-5 & {
+		color: $blue-light;
+	}
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -197,6 +210,7 @@
     border: 2px solid $c-light;
     border-radius: 50%;
     z-index: -1;
+		transition: background-color 0.4s ease;
   }
 
   svg {
@@ -215,6 +229,18 @@
   &:hover {
     color: $c-purple;
 
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+		}
+
     &::before {
       width: 112.5%;
       height: 112.5%;
@@ -227,7 +253,31 @@
 
     &::before {
       border-color: $c-purple;
+
+			.swiper-slide-0 &, .swiper-slide-1 & {
+				border-color: $c-dark;
+			}
+	
+			.swiper-slide-2 &, .swiper-slide-3 & {
+				border-color: $blue-light;
+			}
+			
+			.swiper-slide-4 &, .swiper-slide-5 & {
+				border-color: $blue-dark;
+			}
     }
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+		}
   }
 
   &:active,
@@ -239,6 +289,21 @@
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
+
+			.swiper-slide-0 &, .swiper-slide-1 & {
+				background-color: $c-dark;
+				border-color: $c-dark;
+			}
+	
+			.swiper-slide-2 &, .swiper-slide-3 & {
+				background-color: $blue-light;
+				border-color: $blue-light;
+			}
+			
+			.swiper-slide-4 &, .swiper-slide-5 & {
+				background-color: $blue-dark;
+				border-color: $blue-dark;
+			}
     }
   }
 
@@ -261,32 +326,6 @@
 
 	svg {
 		animation: rotate-ccw 0.5s ease both;
-	}
-}
-
-@keyframes slide-left {
-	from {
-		opacity: 0;
-		transform: translateX(-60px);
-	}
-}
-
-@keyframes slide-right {
-	from {
-		opacity: 0;
-		transform: translateX(60px);
-	}
-}
-
-@keyframes rotate-cw {
-	from {
-		transform: rotate(-180deg);
-	}
-}
-
-@keyframes rotate-ccw {
-	from {
-		transform: rotate(180deg);
 	}
 }
 

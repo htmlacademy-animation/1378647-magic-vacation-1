@@ -31,7 +31,7 @@
     transform: scale(1);
   }
 
-	.swiper-slide-0 &, .swiper-slide-1 &б .swiper-slide-6 &, .swiper-slide-7 & {
+	.swiper-slide-0 &, .swiper-slide-1 & {
 		color: $c-purple;
 	}
 
@@ -60,7 +60,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
-		transition: 0.4s ease;
+		transition: background-color 0.4s ease;
   }
 
   svg {
@@ -73,7 +73,7 @@
   &:hover {
     color: $c-purple;
 
-		.swiper-slide-0 &, .swiper-slide-1 &б .swiper-slide-6 &, .swiper-slide-7 & {
+		.swiper-slide-0 &, .swiper-slide-1 & {
 			color: $c-dark;
 		}
 	
@@ -98,7 +98,7 @@
     &::before {
       border-color: $c-purple;
 
-			.swiper-slide-0 &, .swiper-slide-1 &б .swiper-slide-6 &, .swiper-slide-7 & {
+			.swiper-slide-0 &, .swiper-slide-1 & {
 				border-color: $c-dark;
 			}
 		
@@ -111,7 +111,7 @@
 			}
     }
 
-		.swiper-slide-0 &, .swiper-slide-1 &б .swiper-slide-6 &, .swiper-slide-7 & {
+		.swiper-slide-0 &, .swiper-slide-1 & {
 			color: $c-dark;
 		}
 	
@@ -139,7 +139,7 @@
       background-color: $c-purple;
       border-color: $c-purple;
 
-			.swiper-slide-0 &, .swiper-slide-1 &б .swiper-slide-6 &, .swiper-slide-7 & {
+			.swiper-slide-0 &, .swiper-slide-1 & {
 				background-color: $c-dark;
 				border-color: $c-dark;
 			}
@@ -246,6 +246,14 @@
   border-radius: 50%;
 	opacity: 0;
 
+	// .swiper-slide-2 &, .swiper-slide-3 & {
+	// 	color: $blue-light;
+	// }
+	
+	// .swiper-slide-4 &, .swiper-slide-5 & {
+	// 	color: $blue-dark;
+	// }
+
   @media (min-width: $stop-scaling) {
     width: 40px;
     height: 40px;
@@ -263,6 +271,18 @@
 
   &:hover {
     color: $c-purple;
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+		}
   }
 
   &:focus {
@@ -270,6 +290,21 @@
     background-color: $c-light;
     border-color: $c-purple;
     outline: none;
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+			border-color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+			border-color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+			border-color: $blue-dark;
+		}
   }
 
   &:active,
@@ -277,6 +312,21 @@
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+			border-color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+			border-color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+			border-color: $blue-dark;
+		}
   }
 
   svg {

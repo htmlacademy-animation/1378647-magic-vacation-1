@@ -147,6 +147,11 @@
     width: 4rem;
     height: 4rem;
     color: $c-dark;
+		animation: slide-right 0.5s ease;
+
+		svg {
+			animation: rotate-ccw 0.5s ease both;
+		}
 
     @media (min-width: $stop-scaling) {
       margin-left: 15px;
