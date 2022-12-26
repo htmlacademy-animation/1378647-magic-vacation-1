@@ -105,3 +105,12 @@
 		transform: rotate(180deg);
 	}
 }
+
+@keyframes appearing-from-bottom {
+	from {
+		transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
