@@ -141,7 +141,7 @@
     font-size: 1.6rem;
   }
 
-  span {
+  .result__button-icon {
     position: relative;
     margin-left: 1.5rem;
     width: 4rem;
@@ -169,6 +169,10 @@
       border-radius: 50%;
       z-index: -1;
     }
+  }
+
+  .result__button-text {
+    animation: opacity-appear 0.4s ease;
   }
 
   svg {

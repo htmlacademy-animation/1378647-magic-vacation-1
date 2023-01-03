@@ -29,6 +29,15 @@
 	}
 }
 
+@keyframes show-input-padding {
+	0% {
+		padding: 0 1.3em;
+	}
+	100% {
+		padding: 0 5.6rem;
+	}
+}
+
 @keyframes rules-bullets-appear {
   from {
     transform: scale(0);

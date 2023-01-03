@@ -191,7 +191,7 @@
 	}
 	
 	& .form__field {
-		animation-name: widening-from-right;
+		animation-name: widening-from-right, show-input-padding;
 		animation-duration: 0.4s;
 	}
 }
