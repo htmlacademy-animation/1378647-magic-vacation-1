@@ -36,13 +36,33 @@
 	}
 }
 
+@keyframes flamingo-move-infinite {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(25px);
+	}
+}
+
 @keyframes flamingo-rotate-infinite {
 	from {
 		transform: rotate(5deg);
 	}
 
 	to {
-		transform: translateY(25px) rotate(-4deg);
+		transform: rotate(-4deg);
+	}
+}
+
+@keyframes flamingo-move {
+	from {
+		transform: translate(0px, 200px) scale(0.5);
+	}
+
+	to {
+		transform: translate(0, 0) scale(1);
 	}
 }
 
@@ -143,5 +163,16 @@
 
 	100% {
 		transform: rotate(0);
+	}
+}
+
+@keyframes result-text-appear {
+	from {
+		opacity: 0;
+		transform: scale(1.1);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
 	}
 }
