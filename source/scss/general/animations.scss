@@ -138,30 +138,30 @@
 
 @keyframes leafGreen-move {
 	0% {
-		transform: rotate(41deg);
-	}
-
-	30% {
 		transform: rotate(-9deg);
 	}
-
-	50% {
-		transform: rotate(calc(41deg * 0.1));
+	
+	20% {
+		transform: rotate(25deg);
 	}
 
-	65% {
+	45% {
 		transform: rotate(calc(-9deg * 0.4));
 	}
-
-	80% {
-		transform: rotate(calc(41deg * 0.05));
+	
+	60% {
+		transform: rotate(calc(30deg * 0.4));
 	}
 
-	90% {
+	75% {
 		transform: rotate(calc(-9deg * 0.1));
 	}
+	
+	85% {
+		transform: rotate(calc(30deg * 0.1));
+	}
 
-	100% {
+	95%, 100% {
 		transform: rotate(0);
 	}
 }

@@ -107,6 +107,7 @@
 			width: 55%;
 			height: 26%;
 			background-image: url("../../img/result-2/leaf_green.png");
+			transform-origin: left center;
 		}
 
 		&.suitcase {
@@ -140,20 +141,20 @@
 
 		#result2.screen--show & {
 			&.leaf1 {
-				animation: appearing-opacity 0.7s 1s ease both, leaf1-move 1.7s 1s ease-in-out both;
+				animation: appearing-opacity 0.7s 0.5s+0.5s ease both, leaf1-move 1.7s 0.5s+0.5s ease-in-out both;
 			}
 
 			&.leaf2 {
-				animation: appearing-opacity 0.7s 1s ease both, leaf2-move 1.7s 1s ease-in-out both;
+				animation: appearing-opacity 0.7s 0.5s+0.5s ease both, leaf2-move 1.7s 0.5s+0.5s ease-in-out both;
 
 			}
 
 			&.leaf-green {
-				animation: appearing-opacity 0.7s 1s ease both, leafGreen-move 1.7s 1s ease-in-out both;
+				animation: appearing-opacity 0.7s 0.5s+0.5s ease both, leafGreen-move 1.7s 0.5s+0.5s ease-in-out both;
 			}
 
 			&.suitcase {
-				animation: suitcase-move 0.75s 0.5s cubic-bezier(0.25, 0.1, 0.74, 1.38) both;
+				animation: appearing-opacity 0.7s 0.5s ease both, suitcase-move 0.75s 0.5s cubic-bezier(0.25, 0.1, 0.74, 1.38) both;
 			}
 
 			&.flamingo-wrapper {
@@ -164,7 +165,7 @@
 				animation: flamingo-move-infinite 1.5s 0.5s ease-in-out infinite alternate;
 
 				&::before {
-					animation: flamingo-rotate-infinite 1.5s 0.8s ease-in-out infinite alternate;
+					animation: flamingo-rotate-infinite 1.5s 0.5s+0.3s ease-in-out infinite alternate;
 				}
 			}
 		}
