@@ -123,6 +123,14 @@
       display: block;
     }
   }
+
+	span {
+		animation: appearing-opacity 0.7s ease 0.5s both;
+	}
+
+	&::before {
+		animation: appearing-opacity 0.7s ease both;
+	}
 }
 
 .form--result {
