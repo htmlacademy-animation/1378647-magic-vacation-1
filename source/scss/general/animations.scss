@@ -253,13 +253,19 @@
 
 @keyframes rotate-cw {
 	from {
-		transform: rotate(-180deg);
+		transform: translate(-50%, -50%) rotate(-180deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(0);
 	}
 }
 
 @keyframes rotate-ccw {
 	from {
-		transform: rotate(180deg);
+		transform: translate(-50%, -50%) rotate(180deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(0);
 	}
 }
 
