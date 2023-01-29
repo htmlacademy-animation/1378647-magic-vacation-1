@@ -264,12 +264,17 @@
 		font-size: 1.6rem;
 	}
 
-	span {
-		position: relative;
-		margin-left: 1.5rem;
-		width: 4rem;
-		height: 4rem;
-		color: $c-dark;
+  .result__button-icon {
+    position: relative;
+    margin-left: 1.5rem;
+    width: 4rem;
+    height: 4rem;
+    color: $c-dark;
+		animation: slide-right 0.5s ease;
+
+		svg {
+			animation: rotate-ccw 0.5s ease both;
+		}
 
 		@media (min-width: $stop-scaling) {
 			margin-left: 15px;
@@ -289,11 +294,15 @@
 		}
 	}
 
-	svg {
-		@include center;
-		margin-left: 0.3rem;
-		width: 2.4rem;
-		height: 1.9rem;
+  .result__button-text {
+    animation: opacity-appear 0.4s ease;
+  }
+
+  svg {
+    @include center;
+    margin-left: 0.3rem;
+    width: 2.4rem;
+    height: 1.9rem;
 
 		@media (min-width: $stop-scaling) {
 			margin-left: 3px;

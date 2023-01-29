@@ -2,8 +2,6 @@
   position: relative;
 
   &:hover {
-    color: $c-purple;
-
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
@@ -14,15 +12,6 @@
 			transition-duration: 0.4s;
 			transition-timing-function: ease;
 		}
-    .social-block__toggler {
-      color: $c-purple;
-    }
-  }
-
-  &:focus {
-    .social-block__toggler {
-      color: $c-purple;
-    }
   }
 }
 
@@ -34,13 +23,25 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-  background-color: $c-light;
+  // background-color: $c-light;
   transform: scale(0);
   transition: transform .6s .8s cubic-bezier(0, 1, 1, 1), color 0.4s ease;
 
   body.loaded & {
     transform: scale(1);
   }
+
+	.swiper-slide-0 &, .swiper-slide-1 & {
+		color: $c-purple;
+	}
+
+	.swiper-slide-2 &, .swiper-slide-3 & {
+		color: $blue-dark;
+	}
+	
+	.swiper-slide-4 &, .swiper-slide-5 & {
+		color: $blue-light;
+	}
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -58,8 +59,8 @@
     border-radius: 50%;
     background-color: $c-light;
     border: 2px solid $c-light;
-    // z-index: -1;
-		transition: 0.4s ease;
+    z-index: -1;
+		transition: background-color 0.4s ease;
   }
 
   svg {
@@ -69,18 +70,25 @@
     height: 2.2rem;
   }
 
-  .social-block--active & {
-    color: $c-light;
-    background-color: $c-purple;
+  &:hover {
+    color: $c-purple;
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+		}
+	
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+		}
 
     &::before {
       width: 112.5%;
       height: 112.5%;
     }
-  }
-
-  .social-block--active &::before {
-    background-color: $c-light;
   }
 
   &:focus {
@@ -89,16 +97,40 @@
 
     &::before {
       border-color: $c-purple;
+
+			.swiper-slide-0 &, .swiper-slide-1 & {
+				border-color: $c-dark;
+			}
+		
+			.swiper-slide-2 &, .swiper-slide-3 & {
+				border-color: $blue-light;
+			}
+			
+			.swiper-slide-4 &, .swiper-slide-5 & {
+				border-color: $blue-dark;
+			}
     }
 
-    & + .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
-    }
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+		}
+	
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-dark;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-light;
+		}
+    // & + .social-block__list {
+    //   opacity: 1;
+    //   pointer-events: auto;
+    // }
   }
 
   &:active,
-  &:active:focus {
+  &:active:focus,
+	.social-block--active &:focus {
     color: $c-light;
 
     &::before {
@@ -106,6 +138,21 @@
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
+
+			.swiper-slide-0 &, .swiper-slide-1 & {
+				background-color: $c-dark;
+				border-color: $c-dark;
+			}
+		
+			.swiper-slide-2 &, .swiper-slide-3 & {
+				background-color: $blue-light;
+				border-color: $blue-light;
+			}
+			
+			.swiper-slide-4 &, .swiper-slide-5 & {
+				background-color: $blue-dark;
+				border-color: $blue-dark;
+			}
     }
   }
 }
@@ -199,6 +246,14 @@
   border-radius: 50%;
 	opacity: 0;
 
+	// .swiper-slide-2 &, .swiper-slide-3 & {
+	// 	color: $blue-light;
+	// }
+	
+	// .swiper-slide-4 &, .swiper-slide-5 & {
+	// 	color: $blue-dark;
+	// }
+
   @media (min-width: $stop-scaling) {
     width: 40px;
     height: 40px;
@@ -216,6 +271,18 @@
 
   &:hover {
     color: $c-purple;
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+		}
   }
 
   &:focus {
@@ -223,6 +290,21 @@
     background-color: $c-light;
     border-color: $c-purple;
     outline: none;
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+			border-color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+			border-color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+			border-color: $blue-dark;
+		}
   }
 
   &:active,
@@ -230,6 +312,21 @@
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+
+		.swiper-slide-0 &, .swiper-slide-1 & {
+			color: $c-dark;
+			border-color: $c-dark;
+		}
+
+		.swiper-slide-2 &, .swiper-slide-3 & {
+			color: $blue-light;
+			border-color: $blue-light;
+		}
+		
+		.swiper-slide-4 &, .swiper-slide-5 & {
+			color: $blue-dark;
+			border-color: $blue-dark;
+		}
   }
 
   svg {
